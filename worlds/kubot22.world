@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+<world name="kubot22_world">
+<physics name="default_physics" default="0" type="ode">
+<max_step_size>0.001</max_step_size>
+<real_time_factor>1</real_time_factor>
+<real_time_update_rate>1000</real_time_update_rate>
+<ode>
+<solver>
+<type>quick</type>
+<iters>100</iters>
+<sor>1.0</sor>
+<use_dynamic_moi_rescaling>false</use_dynamic_moi_rescaling>
+</solver>
+</ode>
+</physics>
+ 
+<include>
+<uri>model://ground_plane</uri>
+</include>
+
+<include>
+<uri>model://sun</uri>
+</include>
+
+<include>
+<uri>model://kubot22</uri>
+<!-- <pose frame=''>0 0 0.5 -1.5708 0 0</pose> -->
+<pose frame=''>0 0 0.395 -1.5708 0 0</pose> <!-- roll : -1.5708-->
+<plugin name="plugin" filename="libkubot22_pkgs.so"/>
+</include>
+</world>
+</sdf>
